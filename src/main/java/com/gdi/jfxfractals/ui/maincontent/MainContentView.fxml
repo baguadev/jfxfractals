@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXListView?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.gdi.jfxfractals.ui.maincontent.MainContentView"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+    <SplitPane dividerPositions="0.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane fx:id="levi" maxWidth="250" minWidth="220">
+                <children>
+                    <VBox prefHeight="371.0" prefWidth="186.0" spacing="4.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                            <Label alignment="CENTER" prefHeight="15.0" prefWidth="200.0" style="-fx-alignment: center;" text="Controls" />
+                            <HBox spacing="5.0">
+
+                                <padding>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                </padding>
+                            </HBox>
+                            <Label alignment="CENTER" prefHeight="15.0" prefWidth="200.0" style="-fx-alignment: center;" text="FRACTAL SHAPES" textOverrun="CLIP">
+                                <font>
+                                    <Font size="17.0" />
+                                </font>
+                            </Label>
+                            <JFXListView fx:id="fractalsListView" maxHeight="Infinity" maxWidth="Infinity"  VBox.vgrow="ALWAYS"/>
+                        </children>
+                    </VBox>
+                </children>
+            </AnchorPane>
+            <AnchorPane>
+                <children>
+                    <SplitPane dividerPositions="0.8694885361552028" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <items>
+                            <AnchorPane fx:id="renderCanvasPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                            <AnchorPane fx:id="fractalInfoPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                <children>
+
+                                </children>
+                            </AnchorPane>
+                        </items>
+                    </SplitPane>
+                </children></AnchorPane>
+        </items>
+    </SplitPane>
+</children>
+
+</AnchorPane>

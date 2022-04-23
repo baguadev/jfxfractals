@@ -1,0 +1,199 @@
+/*
+ *	Apply google Roboto font to all UI components
+ */
+@import url("jfoenix-fonts.css");
+
+.root {
+    -fx-font-family: "Roboto";
+}
+
+/*******************************************************************************
+*                                                                              *
+* JFX Decorator                                                                *
+*                                                                              *
+*******************************************************************************/
+
+.jfx-decorator {
+    /*-fx-decorator-color: derive(#58a5f0, -40%);*/
+    -fx-decorator-color: #004c8c;
+}
+
+.jfx-decorator .jfx-decorator-buttons-container {
+    -fx-background-color: -fx-decorator-color;
+}
+
+.jfx-decorator .resize-border {
+    -fx-border-color: -fx-decorator-color;
+    -fx-border-width: 0 4 4 4;
+}
+
+.jfx-decorator .jfx-decorator-title-container .jfx-decorator-text {
+    -fx-fill: WHITE;
+    -fx-font-family: "Roboto Medium";
+    -fx-font-size: 16;
+}
+
+.jfx-decorator .jfx-decorator-title-container .jfx-svg-glyph {
+    /* SVG of the icon */
+    -fx-shape: "M146.286 694.857q0 14.857-10.857 25.714t-25.714 10.857-25.714-10.857-10.857-25.714 10.857-25.714 25.714-10.857 25.714 10.857 10.857 25.714zM804.571 365.714q0 20-12.286 46.286t-30.571 26.857q8.571 9.714 14.286 27.143t5.714 31.714q0 39.429-30.286 68 10.286 18.286 10.286 39.429t-10 42-27.143 30q2.857 17.143 2.857 32 0 48.571-28 72t-77.714 23.429h-73.143q-74.857 0-195.429-41.714-2.857-1.143-16.571-6t-20.286-7.143-20-6.571-21.714-6.286-18.857-3.714-18-1.714h-18.286v-365.714h18.286q9.143 0 20.286-5.143t22.857-15.429 22-20.286 22.857-25.143 19.714-24.286 18-23.429 13.143-17.143q31.429-38.857 44-52 23.429-24.571 34-62.571t17.429-71.714 21.714-48.571q54.857 0 73.143 26.857t18.286 82.857q0 33.714-27.429 91.714t-27.429 91.143h201.143q28.571 0 50.857 22t22.286 51.143zM877.714 365.143q0-58.857-43.429-102.286t-102.857-43.429h-100.571q27.429-56.571 27.429-109.714 0-67.429-20-106.286-20-39.429-58.286-58t-86.286-18.571q-29.143 0-51.429 21.143-19.429 18.857-30.857 46.857t-14.571 51.714-10 48.286-17.714 36.571q-27.429 28.571-61.143 72.571-57.714 74.857-78.286 88.571h-156.571q-30.286 0-51.714 21.429t-21.429 51.714v365.714q0 30.286 21.429 51.714t51.714 21.429h164.571q12.571 0 78.857 22.857 73.143 25.143 127.429 37.714t114.286 12.571h64q80 0 129.429-45.143t48.857-123.429v-2.857q34.286-44 34.286-101.714 0-12.571-1.714-24.571 21.714-38.286 21.714-82.286 0-20.571-5.143-39.429 28-42.286 28-93.143z";
+    -jfx-size: 15;
+    -fx-background-color: WHITE;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFX Tool Bar                                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+.jfx-tool-bar {
+    -fx-font-size: 20.0;
+    /*-fx-font-weight: BOLD;*/
+    -fx-background-color: #0277bd;
+    -fx-pref-width: 100.0%;
+    -fx-pref-height: 64.0px;
+}
+
+.jfx-tool-bar HBox {
+    -fx-alignment: center;
+    -fx-spacing: 25.0;
+    -fx-padding: 0.0 10.0;
+}
+
+.jfx-tool-bar Label {
+    -fx-text-fill: WHITE;
+}
+
+.jfx-tool-bar .jfx-options-burger {
+    -fx-padding: 22px;
+}
+
+.jfx-tool-bar .jfx-options-burger StackPane {
+    -fx-pref-width: 4px;
+}
+
+.jfx-tool-bar .jfx-rippler {
+    -jfx-rippler-fill: WHITE;
+    -jfx-rippler-radius: 80px;
+}
+
+.jfx-tool-bar .jfx-hamburger {
+    -fx-spacing: 5;
+    -fx-cursor: hand;
+}
+
+.jfx-tool-bar .jfx-hamburger StackPane {
+    -fx-pref-width: 25px;
+    -fx-pref-height: 3px;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 3px;
+}
+
+.option-list-view {
+    -fx-pref-width: 160.0px;
+    -fx-background-color: WHITE;
+}
+
+.option-jfx-list-view-icon {
+    -fx-fill: #0277bd;
+    -fx-padding: 0.0 10.0 0.0 5.0;
+    -fx-cursor: hand;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Tab Pane  			                                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: #58a5f0;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Scroll Bar			                                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+.scroll-bar:vertical > .track-background, .scroll-bar:horizontal > .track-background {
+    -fx-background-color: #F1F1F1;
+    -fx-background-insets: 0.0;
+}
+
+.scroll-bar:vertical > .thumb, .scroll-bar:horizontal > .thumb {
+    -fx-background-color: #BCBCBC;
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 1.0;
+}
+
+.scroll-bar > .increment-button, .scroll-bar > .decrement-button {
+    -fx-padding: 5 2 5 2;
+}
+
+.scroll-bar > .increment-button, .scroll-bar > .decrement-button, .scroll-bar:hover > .increment-button, .scroll-bar:hover > .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar > .increment-button > .increment-arrow, .scroll-bar > .decrement-button > .decrement-arrow {
+    -fx-background-color: rgb(150.0, 150.0, 150.0);
+}
+
+.scroll-bar > .increment-button > .increment-arrow {
+    -fx-shape: "M298 426h428l-214 214z";
+}
+
+.scroll-bar > .decrement-button > .decrement-arrow {
+    -fx-shape: "M298 598l214-214 214 214h-428z";
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Scroll Pane			                                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+.scroll-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane:focused {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+    -fx-background-insets: 0;
+}
+
+.jfx-chip-view .jfx-chip > HBox {
+    -fx-font-family: "Roboto Medium";
+    -fx-font-size: 12.0;
+    -fx-background-color: #E0E0E0;
+    -fx-background-radius: 40px;
+    -fx-padding: 5px 8px 5px 12px;
+    -fx-pref-height: 28px;
+    -fx-alignment: center-left;
+    -fx-spacing: 8;
+}
+
+.jfx-chips-popup {
+    -jfx-cell-limit: 5;
+}
+
+.jfx-chips-popup .autocomplete-list {
+    -fx-fixed-cell-size: 50;
+    -fx-background-insets: 0.0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.26), 5, 0.06, -1, 2);
+}
+
+.jfx-chips-popup .autocomplete-list .jfx-list-cell {
+    -fx-text-fill: rgba(0, 0, 0, .87);
+}
+
+.jfx-tool-bar-field
+{
+    -fx-background: #f4f4f4;
+    -fx-background-color:#f4f4f4;
+}

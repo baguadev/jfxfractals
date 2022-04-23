@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="efxclipse-snapshots" />
+      <option name="name" value="efxclipse-snapshots" />
+      <option name="url" value="http://maven.bestsolution.at/efxclipse-snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="efxclipse-releases" />
+      <option name="name" value="efxclipse-releases" />
+      <option name="url" value="http://maven.bestsolution.at/efxclipse-releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central" />
+      <option name="url" value="https://repo1.maven.org/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jcenter-central" />
+      <option name="name" value="jcenter" />
+      <option name="url" value="http://jcenter.bintray.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="eclipse-efxclipse" />
+      <option name="name" value="Eclipse e(fx)clipse" />
+      <option name="url" value="https://repo.eclipse.org/content/groups/efxclipse" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="javacomm-repo" />
+      <option name="name" value="javacomm-repo" />
+      <option name="url" value="http://www.sparetimelabs.com/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="terminalfx-repo" />
+      <option name="name" value="terminalfx-repo" />
+      <option name="url" value="https://github.com/rahmanusta/terminalfx/raw/master/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="project.local" />
+      <option name="name" value="project" />
+      <option name="url" value="file:D:\users\gdi\projects\java\jfxfractals/repo" />
+    </remote-repository>
+  </component>
+</project>

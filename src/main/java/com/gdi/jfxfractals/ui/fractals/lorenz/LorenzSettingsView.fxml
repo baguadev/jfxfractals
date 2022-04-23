@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.gdi.jfxfractals.ui.fractals.lorenz.controls.LorenzConfigList?>
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.gdi.jfxfractals.ui.fractals.lorenz.LorenzSettingsView"
+            prefHeight="400.0" prefWidth="600.0">
+    <GridPane fx:id="grdPaneControls" vgap="5" hgap="5">
+        <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+        <LorenzConfigList fx:id="configList" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3" GridPane.rowSpan="1" prefHeight="200" prefWidth="800"></LorenzConfigList>
+        <Button fx:id="butAdd" maxWidth="Infinity" text="Add" onAction="#addConfigSettings" GridPane.columnIndex="0" GridPane.rowIndex="1"></Button>
+        <Button fx:id="butClear" maxWidth="Infinity" text="Clear" onAction="#clearSettings" GridPane.columnIndex="1" GridPane.rowIndex="1"></Button>
+        <Button fx:id="butCalculate" maxWidth="Infinity" text="Calculate" onAction="#calculateParams" GridPane.columnIndex="2" GridPane.rowIndex="1"></Button>
+    </GridPane>
+
+</AnchorPane>
