@@ -2,14 +2,14 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
-      <option name="id" value="efxclipse-snapshots" />
-      <option name="name" value="efxclipse-snapshots" />
-      <option name="url" value="http://maven.bestsolution.at/efxclipse-snapshots/" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="efxclipse-releases" />
       <option name="name" value="efxclipse-releases" />
       <option name="url" value="http://maven.bestsolution.at/efxclipse-releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jcenter-central" />
+      <option name="name" value="jcenter" />
+      <option name="url" value="https://jcenter.bintray.com" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -20,6 +20,26 @@
       <option name="id" value="central" />
       <option name="name" value="Maven Central" />
       <option name="url" value="https://repo1.maven.org/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="terminalfx-repo" />
+      <option name="name" value="terminalfx-repo" />
+      <option name="url" value="https://github.com/rahmanusta/terminalfx/raw/master/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="javacomm-repo" />
+      <option name="name" value="javacomm-repo" />
+      <option name="url" value="https://www.sparetimelabs.com/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="efxclipse-snapshots" />
+      <option name="name" value="efxclipse-snapshots" />
+      <option name="url" value="http://maven.bestsolution.at/efxclipse-snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="efxclipse-snapshots" />
+      <option name="name" value="efxclipse-snapshots" />
+      <option name="url" value="https://maven.bestsolution.at/efxclipse-snapshots/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="jboss.community" />
@@ -42,14 +62,19 @@
       <option name="url" value="http://www.sparetimelabs.com/maven2" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="terminalfx-repo" />
-      <option name="name" value="terminalfx-repo" />
-      <option name="url" value="https://github.com/rahmanusta/terminalfx/raw/master/releases" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="project.local" />
       <option name="name" value="project" />
       <option name="url" value="file:D:\users\gdi\projects\java\jfxfractals/repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sonatype-snapshots" />
+      <option name="name" value="sonatype-snapshots" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories/snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="efxclipse-releases" />
+      <option name="name" value="efxclipse-releases" />
+      <option name="url" value="https://maven.bestsolution.at/efxclipse-releases/" />
     </remote-repository>
   </component>
 </project>

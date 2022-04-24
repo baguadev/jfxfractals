@@ -29,7 +29,12 @@ to run the application use the .bat file
 ```
 start-jdk17.bat
 ```
-
 Adjust the path to Java 17 and JavaFX SDK in it.
 
 
+
+Also, application can be executed using maven javafx plugin
+
+```
+mvn javafx:run
+```

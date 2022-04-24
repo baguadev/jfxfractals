@@ -24,7 +24,10 @@ import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import static org.burningwave.core.assembler.StaticComponentContainer.Modules;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -157,10 +160,34 @@ public class MainApp extends Application implements MvvmfxApplication {
     }
 
     public static void main(final String[] args) {
+        try {
+            execute();
+        } catch (Throwable exc) {
+            exc.printStackTrace();
+        }
         launch(args);
     }
 
     public static void logError(final Throwable e) {
         log.error("Application error", e);
+    }
+
+    public static void execute() {
+        try {
+            Modules.exportAllToAll();
+            Class<?> bootClassLoaderClass = Class.forName("jdk.internal.loader.ClassLoaders$BootClassLoader");
+            Constructor<? extends ClassLoader> constructor =
+                    (Constructor<? extends ClassLoader>)
+                            Class.forName("jdk.internal.loader.ClassLoaders$PlatformClassLoader")
+                                    .getDeclaredConstructor(bootClassLoaderClass);
+            constructor.setAccessible(true);
+            Class<?> classLoadersClass = Class.forName("jdk.internal.loader.ClassLoaders");
+            Method bootClassLoaderRetriever = classLoadersClass.getDeclaredMethod("bootLoader");
+            bootClassLoaderRetriever.setAccessible(true);
+            ClassLoader newBuiltinclassLoader = constructor.newInstance(bootClassLoaderRetriever.invoke(classLoadersClass));
+            System.out.println(newBuiltinclassLoader + " instantiated");
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        }
     }
 }
