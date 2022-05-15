@@ -5,6 +5,7 @@ JavaFx application that renders various fractal types using  LWJGL OpenGL librar
 Requires JDK 17. Maven uses toolchain plugin so need to add corresponding toolchain into your toolchains.xml file
 located at user home .m2/toolchains.xml
 
+
 ```
 <toolchain>
     <type>jdk</type>
@@ -24,12 +25,9 @@ To build use command:
 mvn install
 ```
 
-to run the application use the .bat file 
+It will generate installer file ( for example .msi for windows) 
 
-```
-start-jdk17.bat
-```
-Adjust the path to Java 17 and JavaFX SDK in it.
+to run the application execute the installer or native binary file in target/installer-work-images folder
 
 
 

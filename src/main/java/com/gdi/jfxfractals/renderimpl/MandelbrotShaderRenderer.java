@@ -34,7 +34,7 @@ import static org.lwjgl.opengl.ARBVertexShader.GL_VERTEX_SHADER_ARB;
 import static org.lwjgl.opengl.GL11.*;
 
 
-public class MandelbrotShaderRenderer extends  AbstractFractalRenderer implements IFractalRender {
+public class MandelbrotShaderRenderer extends AbstractFractalRenderer implements IFractalRender {
 
     private Vector2d cameraTranslation = new Vector2d();
     private double basePanningSpeed = 0.0125f;
@@ -76,11 +76,11 @@ public class MandelbrotShaderRenderer extends  AbstractFractalRenderer implement
             2, 3, 0
     };
 
-    private float   mouseDownX;
-    private float   mouseX;
+    private float mouseDownX;
+    private float mouseX;
     private boolean mouseDown;
     private long firstTime;
-    private int  frameNumber;
+    private int frameNumber;
     private int bounceCount = 1;
     Callable<Void> listenerCallback;
     int program;
@@ -103,15 +103,19 @@ public class MandelbrotShaderRenderer extends  AbstractFractalRenderer implement
         glClearColor(BACKGROUND_COLOUR.x, BACKGROUND_COLOUR.y, BACKGROUND_COLOUR.z, BACKGROUND_COLOUR.w);
 
         // Vertices
-        Vertex v0 = new Vertex(); v0.setXYZ(-2f, 2f, 0f);
-        Vertex v1 = new Vertex(); v1.setXYZ(-2f, -2f, 0f);
-        Vertex v2 = new Vertex(); v2.setXYZ( 2f,-2f, 0f);
-        Vertex v3 = new Vertex(); v3.setXYZ( 2f, 2f, 0f);
-        Vertex[] vertices = new Vertex[] {v0, v1, v2, v3};
+        Vertex v0 = new Vertex();
+        v0.setXYZ(-2f, 2f, 0f);
+        Vertex v1 = new Vertex();
+        v1.setXYZ(-2f, -2f, 0f);
+        Vertex v2 = new Vertex();
+        v2.setXYZ(2f, -2f, 0f);
+        Vertex v3 = new Vertex();
+        v3.setXYZ(2f, 2f, 0f);
+        Vertex[] vertices = new Vertex[]{v0, v1, v2, v3};
 
         // VBO (Vertex Buffer Object)
         FloatBuffer vboBuffer = BufferUtils.createFloatBuffer(vertices.length * Vertex.positionElementCount);
-        for(int vertex = 0; vertex < vertices.length; vertex++) {
+        for (int vertex = 0; vertex < vertices.length; vertex++) {
             vboBuffer.put(vertices[vertex].getXYZW());
         }
         vboBuffer.flip();
@@ -156,14 +160,13 @@ public class MandelbrotShaderRenderer extends  AbstractFractalRenderer implement
     }
 
     @Override
-    public void installListeners()
-    {
+    public void installListeners() {
         System.out.println("Attaching event listeners");
         EventHandler<? super MouseEvent> onMouseMoved = event -> {
             double x = event.getX();
             boolean mouseDown = event.isPrimaryButtonDown();
-            MandelbrotShaderRenderer.this.mouseX = (float)x;
-            if ( mouseDown ) {
+            MandelbrotShaderRenderer.this.mouseX = (float) x;
+            if (mouseDown) {
                 MandelbrotShaderRenderer.this.frameNumber = 0;
             }
         };
@@ -183,11 +186,9 @@ public class MandelbrotShaderRenderer extends  AbstractFractalRenderer implement
             }
         };
 
-        EventHandler<? super KeyEvent> onKeyPress = event-> {
+        EventHandler<? super KeyEvent> onKeyPress = event -> {
 
-            System.out.println("Processing key event:"+event.getEventType());
-            if (event.getCode() == KeyCode.D && event.getEventType() == KeyEvent.KEY_PRESSED)
-            {
+            if (event.getCode() == KeyCode.D && event.getEventType() == KeyEvent.KEY_PRESSED) {
                 moveRight = true;
                 cameraTranslation.add(currentPanningSpeed, 0.0f);
             }
@@ -195,24 +196,21 @@ public class MandelbrotShaderRenderer extends  AbstractFractalRenderer implement
                 moveRight = false;
             }
 
-            if (event.getCode() == KeyCode.A && event.getEventType() == KeyEvent.KEY_PRESSED)
-            {
+            if (event.getCode() == KeyCode.A && event.getEventType() == KeyEvent.KEY_PRESSED) {
                 moveLeft = true;
                 cameraTranslation.add(-currentPanningSpeed, 0.0f);
             }
             if (event.getCode() == KeyCode.A && event.getEventType() == KeyEvent.KEY_RELEASED) {
                 moveLeft = false;
             }
-            if (event.getCode() == KeyCode.W && event.getEventType() == KeyEvent.KEY_PRESSED)
-            {
+            if (event.getCode() == KeyCode.W && event.getEventType() == KeyEvent.KEY_PRESSED) {
                 moveUp = true;
                 cameraTranslation.add(0.0f, currentPanningSpeed);
             }
             if (event.getCode() == KeyCode.W && event.getEventType() == KeyEvent.KEY_RELEASED) {
                 moveUp = false;
             }
-            if (event.getCode() == KeyCode.S && event.getEventType() == KeyEvent.KEY_PRESSED)
-            {
+            if (event.getCode() == KeyCode.S && event.getEventType() == KeyEvent.KEY_PRESSED) {
                 moveDown = true;
                 cameraTranslation.add(0.0f, -currentPanningSpeed);
             }
@@ -274,7 +272,7 @@ public class MandelbrotShaderRenderer extends  AbstractFractalRenderer implement
         }
 
         glUseProgramObjectARB(program);
-        GL20.glBindAttribLocation(program,0,"in_Position");
+        GL20.glBindAttribLocation(program, 0, "in_Position");
 
         uCameraZoom = glGetUniformLocationARB(program, "u_CameraZoom");
         uCameraPos = glGetUniformLocationARB(program, "u_CameraPos");
@@ -283,8 +281,7 @@ public class MandelbrotShaderRenderer extends  AbstractFractalRenderer implement
         return program;
     }
 
-    public void setMaxIter(float maxIter)
-    {
+    public void setMaxIter(float maxIter) {
         this.maxIter[0] = maxIter;
     }
 
@@ -292,7 +289,7 @@ public class MandelbrotShaderRenderer extends  AbstractFractalRenderer implement
     public void dispose() {
         super.dispose();
         System.out.println("Disposing renderer:");
-        if(listenerCallback != null) {
+        if (listenerCallback != null) {
             try {
                 System.out.println("Disposing listeners");
                 listenerCallback.call();
@@ -301,7 +298,7 @@ public class MandelbrotShaderRenderer extends  AbstractFractalRenderer implement
             }
         }
         System.out.println("Disposing shaders");
-        if(shaderHandler !=null) {
+        if (shaderHandler != null) {
             shaderHandler.unBindProgram();
         }
     }

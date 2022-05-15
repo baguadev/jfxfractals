@@ -22,7 +22,7 @@ import java.util.concurrent.Callable;
 
 import static org.lwjgl.opengl.GL11.*;
 
-public class LorenzAttractorRenderer extends  AbstractFractalRenderer implements IFractalRender {
+public class LorenzAttractorRenderer extends AbstractFractalRenderer implements IFractalRender {
 
     private static int tasks = 0;
 
@@ -33,22 +33,20 @@ public class LorenzAttractorRenderer extends  AbstractFractalRenderer implements
     private Camera camera = new Camera();
     private ScatterChart chart = new ScatterChart();
     Callable<Void> listenerCallback;
-    private float   mouseX;
+    private float mouseX;
     private int frameNumber;
     private volatile boolean zoomIn = false;
     private volatile boolean zoomOut = false;
     float z = 0;
-    double lastX,lastY;
+    double lastX, lastY;
 
-    public void removeConfig(LorenzConfig config)
-    {
+    public void removeConfig(LorenzConfig config) {
         updatables.remove(config);
         chart.data.remove(config.series);
 
     }
 
-    public void addConfig(LorenzConfig config)
-    {
+    public void addConfig(LorenzConfig config) {
         chart.data.add(config.series);
         updatables.add(config);
     }
@@ -63,8 +61,8 @@ public class LorenzAttractorRenderer extends  AbstractFractalRenderer implements
         GL11.glClearDepth(1);
 
         //GL11.glEnable(GL_DEPTH_TEST);
-       // GL21.glDepthFunc(GL_LEQUAL);
-       // GL21.glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+        // GL21.glDepthFunc(GL_LEQUAL);
+        // GL21.glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 
         GL11.glEnable(GL_LINE_SMOOTH);
         GL11.glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
@@ -88,14 +86,13 @@ public class LorenzAttractorRenderer extends  AbstractFractalRenderer implements
     }
 
     @Override
-    public void installListeners()
-    {
+    public void installListeners() {
         System.out.println("Attaching event listeners");
         EventHandler<? super MouseEvent> onMouseMoved = event -> {
             double x = event.getX();
             boolean mouseDown = event.isPrimaryButtonDown();
-            this.mouseX = (float)x;
-            if ( mouseDown ) {
+            this.mouseX = (float) x;
+            if (mouseDown) {
                 this.frameNumber = 0;
                 double lastX = this.lastX, lastY = this.lastY;
                 this.lastX = event.getX();
@@ -126,14 +123,13 @@ public class LorenzAttractorRenderer extends  AbstractFractalRenderer implements
                 zoomIn = true;
                 z--;
             }
-            if(z!= 0) {
+            if (z != 0) {
                 this.camera.zoom(z);
             }
         };
 
-        EventHandler<? super KeyEvent> onKeyPress = event-> {
+        EventHandler<? super KeyEvent> onKeyPress = event -> {
 
-            System.out.println("Processing key event:"+event.getEventType());
 
         };
 
@@ -185,8 +181,7 @@ public class LorenzAttractorRenderer extends  AbstractFractalRenderer implements
 
     }
 
-    void reshapeCamera()
-    {
+    void reshapeCamera() {
         this.camera.setWidth(width);
         this.camera.setHeight(height);
     }
@@ -196,7 +191,7 @@ public class LorenzAttractorRenderer extends  AbstractFractalRenderer implements
         super.dispose();
         updatables.clear();
         this.chart.data.clear();
-        if(listenerCallback != null) {
+        if (listenerCallback != null) {
             try {
                 System.out.println("Disposing listeners");
                 listenerCallback.call();

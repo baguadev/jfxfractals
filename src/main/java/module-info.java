@@ -1,5 +1,7 @@
 open module jfxfractals {
     requires java.base;
+    requires transitive java.management;
+    requires transitive java.naming;
     requires transitive javafx.base;
     requires transitive javafx.graphics;
     requires transitive javafx.controls;
